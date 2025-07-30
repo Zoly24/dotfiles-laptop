@@ -1,0 +1,343 @@
+/* If you are planning on using this theme, please copy past this into config.rasi */
+
+/* Global properties and variables */
+/* These properties are inherited by all elements unless explicitly overridden. */
+/* Your existing variables and global settings are here: */
+* {
+    selected-active-background:      var(gruvbox-dark-yellow-light);
+    highlight:                       bold italic ;
+    normal-foreground:               var(foreground);
+    background:                      var(gruvbox-dark-bg0);
+    scrollbar-handle:                var(border-color);
+    alternate-normal-foreground: var(foreground);
+    gruvbox-dark-red-light:          rgba ( 0, 0, 0, 100 % );
+    urgent-foreground:               var(background);
+    gruvbox-dark-fg0:                rgba ( 250, 0, 179, 100 % ); // FIRST CONTAINER TEXT
+    gruvbox-dark-bg3:                rgba ( 76, 73, 76, 100 % ); // FIRST CONTAINER
+    alternate-urgent-foreground: var(urgent-foreground);
+    selected-active-foreground:      var(active-foreground);
+    gruvbox-dark-red-dark:           rgba ( 204, 36, 29, 100 % );
+    separatorcolor:                  var(border-color);
+    selected-normal-background:      var(gruvbox-dark-bg3);
+    selected-urgent-background:      var(gruvbox-dark-red-light);
+    gruvbox-dark-fg1:                rgba ( 247, 148, 219, 100 % ); // EVERY OTHER TEXT + SCROLL BAR
+    scrollbar:                       true;
+    alternate-active-background: var(active-background);
+    active-background:               var(gruvbox-dark-yellow-dark);
+    gruvbox-dark-yellow-dark:        rgba ( 215, 153, 33, 100 % );
+    normal-background:               var(background);
+    gruvbox-dark-yellow-light:       rgba ( 250, 189, 47, 100 % );
+    background-color:                var(background);
+    gruvbox-dark-bg0-soft:           var(background);
+    border-color:                    var(gruvbox-dark-gray);
+    foreground:                      var(gruvbox-dark-fg1);
+    gruvbox-dark-gray:               var(background);
+    alternate-normal-background: var(gruvbox-dark-bg0-soft);
+    urgent-background:               var(gruvbox-dark-red-dark);
+    gruvbox-dark-bg0:                rgba ( 46, 43, 46, 100 % ); // BLUE
+    active-foreground:               var(background);
+    selected-normal-foreground:      var(gruvbox-dark-fg0);
+    font: "Maple Mono 10";
+
+}
+
+/* --- Global Configuration Options (Commented out additions) --- */
+/* These control Rofi's overall behavior. */
+configuration {
+    modes: [ combi ];
+    combi-modes: [windows, drun, run];
+}
+
+window {
+        border-radius: 10px;
+}
+
+/* Your existing element definitions: */
+entry {
+    placeholder: "Enter Program";
+    cursor: pointer;
+}
+
+element {
+    orientation: horizontal;
+    children: [ element-text ];
+    border-radius: 3px;
+    margin: 5px;
+    spacing: 10px;
+}
+
+scrollbar {
+        border-radius: 10px;
+}
+
+/*
+element-icon {
+    size: 1.5em;
+    vertical-align:0.5;
+}
+*/
+
+/* The input bar where you type your search query */
+inputbar {
+    orientation: horizontal;
+    children: [ prompt, entry, case-indicator ]; // Order of elements in the input bar
+    spacing: 10px;
+    padding: 10px;
+    background-color: @normal-background;
+    border-radius: 5px;
+    border: 1px;
+    border-color: rgba(46, 43, 46, 100 %);
+}
+
+/* The 'prompt' label (e.g., "run:", "drun:", etc.) */
+prompt {
+    enabled: false; // Set to false to hide the prompt
+    padding: 5px;
+    background-color: @selected-normal-background;
+    text-color: @selected-normal-foreground;
+    border-radius: 5px;
+    font: @font;
+}
+
+
+/* --- Widget-Specific Styling (Commented out additions) --- */
+
+/* The main Rofi window */
+/*
+window {
+    background-color: @background;
+    border: 1px;
+    border-color: @border-color;
+    border-radius: 8px;
+    padding: 10px;
+    // Location on the screen (see global 'location' for values)
+    // location: 0;
+    // Anchor point (see global 'anchor' for values)
+    // anchor: 0;
+    // Offset from anchor (positive moves right/down)
+    // x-offset: 0px;
+    // y-offset: 0px;
+    // Transparency setting for the window.
+    // real: True transparency. Only works with a compositor.
+    // background: Take a screenshot of the background image and use that.
+    // screenshot: Take a screenshot of the screen and use that.
+    // Path to png file: Use an image file.
+    // transparency: "real";
+    // fullscreen: false; // Set to true for full screen Rofi
+    // vertical-align: 0.5; // Align window vertically
+    // horizontal-align: 0.5; // Align window horizontally
+}
+*/
+
+/* The main container box for Rofi elements (inputbar, listview, scrollbar) */
+/*
+mainbox {
+    orientation: vertical;
+    children: [ inputbar, listview, scrollbar ]; // Order of elements
+    spacing: 10px;
+    padding: 10px;
+}
+*/
+
+
+
+/* The case sensitivity indicator (e.g., "Case-sensitive") */
+/*
+case-indicator {
+    enabled: true; // Set to false to hide the indicator
+    text-color: @normal-foreground;
+    background-color: @normal-background;
+    font: @font;
+}
+*/
+
+/* The textbox widget (used for entry, prompt, case-indicator, and element-text) */
+/*
+textbox {
+    background-color: inherit;
+    text-color: inherit;
+    font: inherit;
+    horizontal-align: 0.0;
+    vertical-align: 0.5;
+    padding: 0px;
+    str: "Default Text"; // Can be set for fixed text elements
+    markup: false; // Enable/disable pango markup
+    highlight: @highlight; // Text highlight style
+    blink: true; // Cursor blink for input textboxes
+}
+*/
+
+/* The list of searchable entries */
+/*
+listview {
+    orientation: vertical;
+    columns: 1; // Number of columns in the list
+    lines: 10; // Number of lines visible
+    spacing: 5px;
+    padding: 5px;
+    background-color: @background;
+    border-radius: 5px;
+    // layout: vertical; // vertical, horizontal, horizontal-alt (for grid layout)
+    // flow: column; // column, row, grid (for grid layout)
+    // fixed-height: true; // Force fixed height for all elements
+    // fixed-columns: true; // Force fixed width for all elements
+    // cycle: true; // Cycle through results
+}
+*/
+
+/* Each individual entry in the listview */
+/*
+element {
+    // Your existing orientation, children, spacing
+    padding: 5px;
+    background-color: @normal-background; // Background for unselected elements
+    text-color: @normal-foreground; // Text color for unselected elements
+    border-radius: 5px;
+    border: 0px;
+    border-color: @border-color;
+
+    // Selected state
+    &selected {
+        background-color: @selected-normal-background;
+        text-color: @selected-normal-foreground;
+    }
+
+    // Active state (e.g., for run modes with active programs)
+    &active {
+        background-color: @active-background;
+        text-color: @active-foreground;
+    }
+
+    // Urgent state (e.g., for window mode with urgent windows)
+    &urgent {
+        background-color: @urgent-background;
+        text-color: @urgent-foreground;
+    }
+
+    // Combinations (e.g., selected and active)
+    &selected.active {
+        background-color: @selected-active-background;
+        text-color: @selected-active-foreground;
+    }
+    &selected.urgent {
+        background-color: @selected-urgent-background;
+        text-color: @selected-urgent-foreground;
+    }
+    &active.urgent { // Not very common
+        background-color: @active-background;
+        text-color: @active-foreground;
+    }
+}
+*/
+
+/* The text within each list element */
+/*
+element-text {
+    // Your existing settings for element-text are:
+    // This element generally inherits from the parent 'element'
+    background-color: inherit;
+    text-color: inherit;
+    font: inherit; // Can override if desired
+    // highlight: @highlight;
+    // vertical-align: 0.5;
+    // horizontal-align: 0.0;
+    // padding: 0px;
+}
+*/
+
+/* The icon within each list element */
+/*
+element-icon {
+    // Your existing size, vertical-align
+    background-color: inherit;
+    padding: 0px;
+    border-radius: 0px;
+}
+*/
+
+/* The scrollbar */
+/*
+scrollbar {
+    width: 4px; // Width of the scrollbar
+    padding: 0px;
+    background-color: @background; // Background color of the scrollbar track
+    handle-color: @scrollbar-handle; // Color of the draggable handle
+    border-radius: 5px; // Rounded corners for the scrollbar
+    margin: 0px 5px; // Top/bottom margin, left/right margin
+}
+*/
+
+/* The mode switcher buttons (if modes are enabled) */
+/*
+mode-switcher {
+    orientation: horizontal;
+    children: [ button ];
+    spacing: 5px;
+    padding: 5px;
+    background-color: @background;
+    border-radius: 5px;
+    border: 1px;
+    border-color: @border-color;
+}
+*/
+
+/* Individual buttons in the mode switcher */
+/*
+button {
+    padding: 5px 10px;
+    background-color: @normal-background;
+    text-color: @normal-foreground;
+    border-radius: 5px;
+    border: 1px;
+    border-color: @border-color;
+    font: @font;
+
+    &selected {
+        background-color: @selected-normal-background;
+        text-color: @selected-normal-foreground;
+    }
+}
+*/
+
+/* The message box (for errors or info) */
+/*
+message {
+    padding: 10px;
+    background-color: @background;
+    text-color: @foreground;
+    border-radius: 5px;
+    border: 1px;
+    border-color: @border-color;
+    font: @font;
+}
+*/
+
+/* --- Common Variable Types & Units --- */
+/*
+// Distances: Can be in px, em, ch (character width), or %
+// padding: 10px;
+// width: 50%;
+// size: 1.5em;
+
+// Colors: Can be hexadecimal, rgba, or named colors
+// color: #FF0000; // Red
+// color: rgba(255, 0, 0, 0.5); // Red with 50% opacity
+// color: red; // Named color
+
+// Booleans: true or false
+// enabled: true;
+
+// Numbers: Integers or decimals
+// vertical-align: 0.5; // Centers vertically
+// columns: 2;
+
+// Lists: For 'children' or 'modes'
+// children: [ prompt, entry ];
+// modes: [ "window", "run" ];
+
+// Calculations: Use calc() for combining units
+// width: calc(50% - 20px);
+
+// Variables: Use var() to reference other properties
+// background-color: var(foreground);
+*/
