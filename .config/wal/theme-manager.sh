@@ -37,7 +37,7 @@ else
         exit 1
     fi
 
-    wal -i "$WALLPAPER_PATH" -n
+    wal --saturate .35 -i "$WALLPAPER_PATH" -n
     reload_apps
     swww img --transition-type wipe --transition-duration 1.5 --transition-fps 240 --transition-angle 30 --transition-step 200 "$WALLPAPER_PATH"
     echo "All themes applied."
