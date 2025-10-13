@@ -85,4 +85,15 @@ return {
     i(0), -- Final cursor position
     t({ "", "" }),
   }),
+  s("augmat", {
+    t("\\left[\\begin{array}{"),
+    i(1, "ccc|c"), -- Column format: 3 columns, then a vertical line, then 1 column
+    t("}"),
+    t({ "", "    " }),
+    i(2, "1 & 2 & 3 & 4 \\\\"), -- Row 1
+    t({ "", "    5 & 6 & 7 & 8 \\\\" }, ""), -- Row 2
+    t({ "", "    9 & 10 & 11 & 12" }), -- Row 3 (no \\ at end)
+    t({ "", "\\end{array}\\right]" }),
+    i(0), -- Final cursor position
+  }),
 }
