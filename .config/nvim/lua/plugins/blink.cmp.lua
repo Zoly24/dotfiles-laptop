@@ -14,6 +14,9 @@ return {
     -- Optional: If <Tab> isn't working for jumping, check your keymap preset.
     -- LazyVim's default keymap preset usually enables SuperTab logic:
     -- opts.keymap = { preset = "super-tab" } -- if you need to enforce a change
+    opts.fuzzy = {
+      implementation = "lua",
+    }
 
     return opts
   end,

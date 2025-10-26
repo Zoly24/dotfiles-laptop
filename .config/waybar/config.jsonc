@@ -36,7 +36,7 @@
         "format-icons": {
             "active": "",
             "default": "",
-            "empty": "",
+            "empty": "-",
         },
 
         "persistent-workspaces": {
@@ -48,11 +48,11 @@
         "format": "{player_icon} {title} - {artist}",
         "format-paused": "{status_icon} <i>{title} - {artist}</i>",
         "player-icons": {
-            "default": "▶",
+            "default": " ",
             "mpv": "󰝚"
         },
         "status-icons": {
-            "paused": "⏸"
+            "paused": " "
         },
 
         "min-length": 5,
@@ -126,7 +126,7 @@
         "format-bluetooth-muted": "󰝟 {icon} {format_source}",
         "format-muted": "󰝟 {format_source}",
         "format-source": "{volume}% ",
-        "format-source-muted": " ",
+        "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",

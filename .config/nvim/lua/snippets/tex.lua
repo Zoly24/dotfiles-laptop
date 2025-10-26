@@ -96,4 +96,25 @@ return {
     t({ "", "\\end{array}\\right]" }),
     i(0), -- Final cursor position
   }),
+  s("algorithm", {
+    t("\\begin{algorithm}[H]"),
+    t({ "", "    \\caption{" }),
+    i(1, "The Algorithm Name"), -- Caption
+    t("}"),
+    t({ "", "    \\label{alg:" }),
+    i(2, "algorithm_name"), -- Label
+    t({ "}" }),
+    t({ "", "    \\begin{algorithmic}[" }),
+    i(3, "1"), -- Line Numbering (1 for yes, empty for no)
+    t("]"),
+    i(4, {
+      t("        \\State Fetch Instruction (IF)"),
+      t("        \\State Decode Instruction (ID)"),
+      t("        \\State Execute (EX)"),
+    }),
+
+    t({ "", "    \\end{algorithmic}" }),
+    t({ "", "\\end{algorithm}" }),
+    i(0),
+  }),
 }
