@@ -2,7 +2,7 @@
 
 # BEGIN_KITTY_THEME
 # Base2Tone Mall Dark
-include colors.conf
+include ~/.cache/wal/colors-kitty.conf
 # END_KITTY_THEME
 
 #: Fonts {{{
@@ -11,7 +11,7 @@ include colors.conf
 #: individual font faces and even specify special fonts for particular
 #: characters.
 # BEGIN_KITTY_FONTS
-font_family      family='FiraCode Nerd Font Mono' style=Retina
+font_family      family='FiraCode Nerd' variable_name=GoogleSansCode wght=414.8648648648649
 bold_font        auto
 italic_font      auto
 bold_italic_font auto

@@ -1,10 +1,10 @@
 // # z0mbi3 -  https://github.com/gh0stzk/dotfiles
 
 configuration {
-    modi:                        "drun";
+    modi:"drun";
     show-icons:                  true;
     drun-display-format:         "{name}";
-    font:                        "Maple Mono";
+    font:                        "FiraCode Nerd Font";
     
     //hover-select:				 true;
 	//me-select-entry:			 "";
@@ -13,7 +13,7 @@ configuration {
 
 //----- Global Properties -----//
 
-@import "colors"
+@import "colors.rasi"
 
 //----- Main Window -----//
 
@@ -25,9 +25,9 @@ window {
     cursor:                      "default";
     spacing:                     0px;
     padding:                     0px;
-    border:                      0px;
+    border:                      4px;
     border-radius:               10px;
-    border-color:                transparent;
+    border-color:                @primary;
     background-color:            transparent;
 }
 
@@ -36,7 +36,7 @@ window {
 mainbox {
     enabled:                     true;
     children:                    [ "listview" ];
-    background-color:            @background;
+    background-color:            @surface;
 }
 
 //----- Listview -----//
@@ -56,7 +56,7 @@ listview {
     fixed-columns:               true;
     cursor:                      "default";
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 //----- Elements -----//
@@ -65,11 +65,13 @@ element {
     enabled:                     true;
     orientation:                 horizontal;
     spacing:                     0px;
-    padding:                     0px;
+    padding:                     5px;
     border-radius:               20px;
+    border:                     5px;
+    border-color:               transparent;
     cursor:                      pointer;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @on-surface;
 }
 
 @media(max-aspect-ratio: 1.8) {
@@ -79,8 +81,13 @@ element {
 }
 
 element selected.normal {
-    background-color:            @active-background;
-    text-color:                  @active-foreground;
+    background-color:            @primary;
+    text-color:                  @on-primary;
+    border-color:               @primary;
+}
+
+element-text selected.normal {
+    text-color: @on-primary;
 }
 
 element-icon {
@@ -92,10 +99,11 @@ element-icon {
 }
 
 element-text {
+    enabled: true;
     vertical-align:              0.5;
     horizontal-align:            0.5;
-    padding:                     20px;
+    padding:                     0px;
     cursor:                      inherit;
     background-color:            transparent;
-    text-color:                  @selected-urgent-background;
+    text-color:                  @on-surface;
 }

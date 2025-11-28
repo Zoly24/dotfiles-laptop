@@ -55,8 +55,6 @@ wall_selection=$(find "${wall_dir}" -maxdepth 1 -type f \( -iname "*.jpg" -o -in
 
 # Set the wallpaper
 [[ -n "$wall_selection" ]] || exit 1
-wal --saturate .35 -i ${wall_dir}/${wall_selection} -n
-reload_apps
-swww img --transition-type wipe --transition-duration 1.5 --transition-fps 240 --transition-angle 30 --transition-step 200 ${wall_dir}/${wall_selection}
+matugen image ${wall_dir}/${wall_selection}
 
 exit 0
