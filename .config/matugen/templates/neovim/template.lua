@@ -43,11 +43,11 @@ set_hl_mutliple({ "TSComment", "Comment" }, {
 })
 
 set_hl_mutliple({ "TSMethod", "Method" }, {
-	fg = "{{colors.source_color.default.hex}}",
+	fg = "{{colors.on_tertiary_container.default.hex}}",
 })
 
 set_hl_mutliple({ "TSFunction", "Function" }, {
-	fg = "{{colors.source_color.default.hex}}",
+	fg = "{{colors.on_tertiary_container.default.hex}}",
 })
 
 vim.api.nvim_set_hl(0, "Keyword", {

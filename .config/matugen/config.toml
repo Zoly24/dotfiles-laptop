@@ -1,7 +1,3 @@
-[color]
-saturation_level = 100
-strategy = "expressive"
-
 [config.wallpaper]
 command = "swww"
 arguments = ["img",
