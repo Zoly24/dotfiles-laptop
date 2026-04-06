@@ -14,15 +14,15 @@ Rectangle {
 
     height: hyprRow.height + barConfig.moduleMargin
     width: hyprRow.width + barConfig.moduleMargin * 2
-    radius: height + width / 2
+    radius: Math.min(height, width) / 2
 
     anchors.margins: barConfig.moduleMargin
 
     color: Colorscheme.hyprBg
 
     RowLayout {
-        anchors.centerIn: hyprBackground
         id: hyprRow
+        anchors.centerIn: hyprBackground
         spacing: barConfig.workSpacing
         Repeater {
             id: hyprRepeater

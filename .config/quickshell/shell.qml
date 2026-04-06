@@ -1,7 +1,15 @@
 import Quickshell
+import Quickshell.Io
 import QtQuick
-import"./core"
-
+import "./core"
 ShellRoot {
-    Bar{}
+    Variants {
+        model: Quickshell.screens;
+        delegate: Component {
+            Bar {
+                required property var modelData
+                screenData: modelData
+            }
+        }
+    }
 }

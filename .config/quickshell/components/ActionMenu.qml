@@ -11,14 +11,14 @@ PopupWindow {
 
     property int menuBorderWidth: 0;
 
-    property bool hasHoveredOver: false;
-    property bool cursorOff: false;
+    // DEBUGGING
+    property bool debugVisible: false;
 
     implicitHeight: menuHeight
     implicitWidth: menuWidth
 
     color: "transparent"
-    visible: actionWindow.initialVisible
+    visible: actionWindow.debugVisible
 
     Rectangle {
         id: actionBackground

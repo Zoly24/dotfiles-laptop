@@ -2,7 +2,7 @@ import Quickshell
 import QtQuick
 import Qt5Compat.GraphicalEffects
 
-import '../core/'
+import "../core/"
 
 
 Rectangle {
@@ -64,6 +64,8 @@ Rectangle {
         id: mouseButton
         enabled: true;
         anchors.fill: button
-        onClicked: button.clicked()
+        onClicked: {
+            button.clicked()
+        }
     }
 }

@@ -5,6 +5,10 @@ import "../modules"
 
 PanelWindow {
     id: bar
+    
+    required property var screenData;
+    screen: screenData;
+
     anchors {
         top: true
         left: true
@@ -37,10 +41,8 @@ PanelWindow {
         color: Colorscheme.bgAccent
         Text {
             anchors.centerIn: clockTime
-            font: {
-                family = barConfig.fontFamily;
-                pixelSize = barConfig.fontSize;
-            }
+            font.family: barConfig.fontFamily;
+            font.pixelSize: barConfig.fontSize;
             color: Colorscheme.fontColorPrimary
             text: ClockModule.time
         }
@@ -77,5 +79,6 @@ PanelWindow {
         anchors.verticalCenter: parent.verticalCenter
         bar: bar
         config: barConfig
+        currentScreen: screenData
     }
 }

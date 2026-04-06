@@ -98,7 +98,7 @@ Rectangle {
     Process {
         id: wallpaperSlideProc
         onExited: {
-            console.log("done")
+            console.log("done (system size)" + Screen.width + " " + Screen.height)
             wallpaperContainer.closeRequested();
         }
     }

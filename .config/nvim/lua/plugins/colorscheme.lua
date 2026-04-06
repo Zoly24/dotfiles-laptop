@@ -1,6 +1,10 @@
 return {
     -- Gruvbox
-    { "ellisonleao/gruvbox.nvim" },
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        lazy = false,
+    },
 
     -- Catppuccin
     {
@@ -18,7 +22,11 @@ return {
     },
 
     -- Nord
-    { "shaunsingh/nord.nvim" },
+    {
+        "shaunsingh/nord.nvim",
+        priority = 1000,
+        lazy = false,
+    },
 
     -- Everforest
     {

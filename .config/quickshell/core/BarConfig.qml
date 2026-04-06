@@ -9,8 +9,8 @@ QtObject {
     property int moduleHeight: 30
     property int moduleMargin: 15
 
-    property string fontFamily: "Maple Mono"
-    property int fontSize: 14
+    property string fontFamily: "Commit Mono"
+    property int fontSize: 15
 
     // HyprModule Settings
     property int workSpacing: 20
@@ -26,9 +26,16 @@ QtObject {
     property int startMenuRadius: 10;
 
     // Audio Menu Settings
-    property int audioMenuHeight: 400;
-    property int audioMenuWidth: 300;
+    property int audioMenuHeight: 250;
+    property int audioMenuWidth: 350;
     property int audioMenuRadius: 10;
+    property int audioMenuMargin: 10;
+
+    property int audioViewMargin: 10;
+    property int audioViewTextMargin: 20;
+    property int audioButtonMargin: 15;
+    property real audioItemHeight: 50;
+    property real audioItemMargin: 10;
 
     // Wifi Menu Settings
     property int wifiMenuHeight: 400;
@@ -37,8 +44,6 @@ QtObject {
 
     // Wallpaper Menu Settings
     property int wallpaperIconWidth: 100;
-    property int wallpaperMenuWidth: Screen.width * 0.60
-    property int wallpaperMenuHeight: Screen.height * 0.55
     property int wallpaperMenuRadius: 15
 
     // ClockModule Settings

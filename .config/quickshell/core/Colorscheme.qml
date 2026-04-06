@@ -8,6 +8,7 @@ QtObject {
     property color bg: "#2c2c2c"
     property color bgAccent: "#4a4a4a"
     property color primary: "#72efdd"
+    property color primaryAccent: "#14b89f"
 
     // Hyprland
     property color hyprBg: bgAccent

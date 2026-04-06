@@ -6,15 +6,16 @@
 
   "logo": {
     "type": "auto",
-    "source": "~/.config/fastfetch/white-eyes-small.jpg",
+    "source": "~/.config/fastfetch/arch",
     "position": "left",
     "padding": {
-            "bottom": 15,
-            "right": 1,
+            "top": 2,
+            "right": 2,
+            "left": 2,
     },
   },
   "display": {
-    "separator": "    "
+    "separator": "   "
   },
   "modules": [
     "break",
@@ -23,27 +24,27 @@
       "format": "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
     },
     {
-      "type": "os",
-      "key": "  ",
-      "keyColor": "blue",
-      "format": "{pretty-name}"
+      "type": "title",
+      "key": "    user",
+      "keyColor": "white",
+      "format": "{user-name}"
     },
     {
       "type": "wm",
-      "key": "  󰨇",
-      "keyColor": "cyan",
+      "key": "  󰨇  wm  ",
+      "keyColor": "white",
       "format": "{pretty-name}"
     },
     {
       "type": "terminal",
-      "key": "  ",
-      "keyColor": "green",
+      "key": "    term",
+      "keyColor": "white",
       "format": "{pretty-name}"
     },
     {
       "type": "shell",
-      "key": "  ",
-      "keyColor": "green",
+      "key": "    sh  ",
+      "keyColor": "white",
         "format": "{process-name}"
     },
     {
@@ -52,33 +53,33 @@
     },
     {
       "type": "host",
-      "key": "  ",
-      "keyColor": "bright_red"
+      "key": "    host",
+      "keyColor": "white"
     },
     {
       "type": "gpu",
-      "key": "  󱤓",
+      "key": "  󱤓  gpu ",
         "format":"{name}",
-        "keyColor": "yellow"
+        "keyColor": "white"
     },
     {
       "type": "disk",
-      "key": "  ",
-      "keyColor": "bright_magenta",
+      "key": "    disk",
+      "folders": "/home",
+      "keyColor": "white",
             "format": "{size-used} / {size-total}"
     },
     {
+      "type": "custom",
+      "format": "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+    },
+    {
         "type": "colors",
-        "key": "  ",
         "keyColor": "white",
         "symbol": "circle",
         "block": {
             "range": [1,6],
         },
     },
-    {
-      "type": "custom",
-      "format": "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
-    }
   ]
 }
